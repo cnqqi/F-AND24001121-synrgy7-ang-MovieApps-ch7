@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize MoviesRepository with context
+        MoviesRepository.initialize(this)
+
         displayWelcomeMessage()
 
         // Initialize RecyclerViews

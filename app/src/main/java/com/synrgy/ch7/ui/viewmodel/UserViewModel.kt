@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserViewModel @Inject constructor(
-    private val preferencesManager: PreferencesManager
+    preferencesManager: PreferencesManager
 ) : ViewModel() {
 
     private val _username = MutableLiveData<String>()

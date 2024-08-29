@@ -26,7 +26,6 @@ class ProfileActivity : AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize the ActivityResultLauncher
         pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             uri?.let {
                 val inputStream: InputStream? = contentResolver.openInputStream(it)
@@ -58,12 +57,10 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun loadUserProfile() {
-        // Load user profile data into EditText fields, for example from SharedPreferences or ViewModel
-        // For now, let's use placeholder data
         binding.etUsername.setText("JohnDoe")
         binding.etFullName.setText("John Doe")
         binding.etDateOfBirth.setText("01/01/1990")
-        binding.etAddress.setText("123 Main Street")
+        binding.etAddress.setText("123 Street")
     }
 
     private fun updateProfile() {
@@ -72,14 +69,10 @@ class ProfileActivity : AppCompatActivity() {
         val dateOfBirth = binding.etDateOfBirth.text.toString()
         val address = binding.etAddress.text.toString()
 
-        // Save the updated profile information
-        // For example, save to SharedPreferences or ViewModel
         Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
     }
 
     private fun logout() {
-        // Clear user session or token, if any
-        // Redirect to login activity
         startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }

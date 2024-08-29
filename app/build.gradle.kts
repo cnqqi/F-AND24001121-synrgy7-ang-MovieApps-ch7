@@ -103,9 +103,18 @@ dependencies {
     implementation ("com.google.dagger:hilt-android:2.52")
     kapt ("com.google.dagger:hilt-compiler:2.52")
 
-    dependencies {
-        implementation ("com.google.android.material:material:1.9.0")
-    }
+    implementation ("com.google.android.material:material:1.9.0")
+
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Chucker
+    debugImplementation ("com.github.chuckerteam.chucker:library:4.0.0")
+    releaseImplementation ("com.github.chuckerteam.chucker:library-no-op:4.0.0")
+
+    // Menambahkan dependency HttpLoggingInterceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.4")
 
 
 }
