@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.synrgy.ch7.BuildConfig
 import com.synrgy.ch7.R
 import com.synrgy.ch7.databinding.ActivityLoginBinding
 import com.synrgy.ch7.ui.activities.MainActivity
