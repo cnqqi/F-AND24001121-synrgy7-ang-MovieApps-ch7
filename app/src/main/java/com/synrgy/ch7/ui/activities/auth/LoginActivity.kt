@@ -3,9 +3,12 @@ package com.synrgy.ch7.ui.activities.auth
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.synrgy.ch7.R
 import com.synrgy.ch7.databinding.ActivityLoginBinding
 import com.synrgy.ch7.ui.activities.MainActivity
 import com.synrgy.ch7.ui.viewmodel.LoginViewModel
@@ -23,6 +26,16 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupClickListeners()
+
+        val checkButton: Button = findViewById(R.id.btnCheck)
+        checkButton.setOnClickListener {
+            checkFlavor()
+        }
+    }
+
+    private fun checkFlavor() {
+        val flavorName = BuildConfig.FLAVOR_NAME
+        Toast.makeText(this, "Flavor: $flavorName", Toast.LENGTH_LONG).show()
     }
 
     private fun setupClickListeners() = with(binding) {
@@ -55,4 +68,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
